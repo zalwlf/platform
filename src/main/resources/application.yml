@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: pro
+logging:
+  config: classpath:log4j2-spring-${spring.profiles.active}.xml
+exception:
+    handler:
+      packageSelector: com.zalwlf
+
+server:
+  port: 8082

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>500</title>
+</head>
+<body>
+<!--导航-->
+<nav th:replace="_fragments :: menu(0)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <!--标题-->
+            <div class="ui teal header item">ZALWLF</div>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="folder open icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="paper plane icon"></i>关于</a>
+
+            <!--搜索-->
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui action left icon input">
+                    <i class="search link icon"></i>
+                    <input type="text" placeholder="搜索...">
+                    <div class="ui teal button">搜索</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--/*@thymesVar id="result" type="com.zalwlf.common.result.CommonResult"*/-->
+<!--/*@thymesVar id="message" type="java.lang.String"*/-->
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message">
+        <div class="ui container">
+            <h2>ERROR</h2>
+            <p th:text="${result.message}"></p>
+        </div>
+    </div>
+</div>
+
+
+<!--声明-->
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/images/wechatlogo.jpg" th:src="@{/images/wechatlogo.jpg}" alt="" class="ui rounded image" style="width: 10em">
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced m-opacity-mini">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Springboot入门</a>
+                    <a href="#" class="item">Shiro权限框架使用</a>
+                    <a href="#" class="item">Docker部署项目环境</a>
+                </div>
+            </div>
+            <div class="four wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced m-opacity-mini">联系站主</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item"><i class="ui envelope icon"></i>zalwlf108508@126.com</a>
+                    <a href="#" class="item"><i class="ui wechat icon"></i>mengen-108508</a>
+                </div>
+            </div>
+            <div class="five wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced m-opacity-mini">MengEn</h4>
+                <div class="ui inverted link list">
+                    <p class="item">生我明目，目及清明；心如猛虎，细嗅蔷薇。</p>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright © 2019-2020 zalwlf.com. All rights reserved.</p>
+        <a href="http://beian.miit.gov.cn" target="_blank" class="m-text-thin m-text-spaced m-opacity-mini m-color-white">京ICP备19000217号</a>
+    </div>
+</footer>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/menu.css" th:href="@{/css/menu.css}">
+    <title>Login</title>
+</head>
+<body>
+
+<!--<div class="ui middle aligned center aligned container" style="width: 30em !important;">-->
+    <div class="ui middle aligned center aligned grid" style="height: 100% !important;">
+        <div class="column" style="width: 30em !important;">
+            <h2 class="ui teal image header">
+                <img src="../../static/images/wechatlogo.jpg" th:src="@{/images/wechatlogo.jpg}" class="image" style="width: 70px">
+                <div class="content">
+                    管理后台登录
+                </div>
+            </h2>
+            <form class="ui large form" method="post" action="#" th:action="@{/blog/v1/admin/user/log/in}">
+                <div class="ui segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="username" placeholder="账户">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="密码">
+                        </div>
+                    </div>
+                    <button class="ui fluid large teal submit button">登录</button>
+                </div>
+
+                <div class="ui error message"></div>
+                <!--/*@thymesVar id="message" type="java.lang.String"*/-->
+                <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">
+                    用户名或密码错误
+                </div>
+            </form>
+
+           <!-- <div class="ui message">
+                还没有账户? <a href="#">点击注册</a>
+            </div>-->
+        </div>
+    </div>
+<!--</div>-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $('.ui.form').form({
+        fields :{
+            username : {
+                identifier : 'username',
+                rules : [{
+                    type : 'empty',
+                    prompt : '请输入账号'
+                }]
+            },
+            password : {
+                identifier : 'password',
+                rules : [{
+                    type : 'empty',
+                    prompt : '请输入密码'
+                }]
+            }
+        }
+    });
+</script>
+</body>
+</html>

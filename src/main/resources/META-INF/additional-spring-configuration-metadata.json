@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "exception.handler.packageSelector",
+      "type": "java.lang.String",
+      "description": "Description for exception.handler.packageSelector."
+    }
+  ] }
